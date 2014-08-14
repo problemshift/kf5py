@@ -5,7 +5,7 @@ setup(
     version='0.1.dev1',
     author='Chris Teplovs',
     author_email='dr.chris@problemshift.com',
-    url='http://pypi.python.org/pypi/kf5py/',
+    url='https://github.com/problemshift/kf5py',
     license='LICENSE.txt',
     description='Python-based utilities for KF5.',
     long_description=open('README.md').read(),
