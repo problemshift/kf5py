@@ -6,7 +6,7 @@ A python package to access KF5 data via its API.
 
     #!/usr/bin/env python
 
-    from kf5py import kf5connection
+    from kf5py import connection
     
     conn = kf5py.connection('http://localhost:8080/kforum/','username','password')
     print conn.is_valid()
