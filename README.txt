@@ -2,7 +2,7 @@
 KF5 API
 ===========
 
-An python package to access KF5 data via its API
+A python package to access KF5 data via its API.
 
     #!/usr/bin/env python
 
