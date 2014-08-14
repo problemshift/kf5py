@@ -8,7 +8,7 @@ setup(
     url='http://pypi.python.org/pypi/kf5py/',
     license='LICENSE.txt',
     description='Python-based utilities for KF5.',
-    long_description=open('README.txt').read(),
+    long_description=open('README.md').read(),
     install_requires=[
         "requests >= 2.3.0"
     ],
