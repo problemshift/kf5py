@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='kf5connection',
+    name='kf5py',
     version='0.1.dev1',
     author='Chris Teplovs',
     author_email='dr.chris@problemshift.com',
-    url='http://pypi.python.org/pypi/kf5connection/',
+    url='http://pypi.python.org/pypi/kf5py/',
     license='LICENSE.txt',
-    description='Connection utilities for KF5.',
+    description='Python-based utilities for KF5.',
     long_description=open('README.txt').read(),
     install_requires=[
         "requests >= 2.3.0"
