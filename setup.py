@@ -13,6 +13,9 @@ setup(
         "requests >= 2.3.0"
     ],
     classifiers=[
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
         "Development Status :: 1 - Planning",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
