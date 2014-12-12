@@ -46,10 +46,12 @@ section_ids = conn.get_section_ids()
 views = conn.get_views_by_sectionid(section_ids[0])
 
 for view in views:
+    print view['title']
     viewjson = conn.get_view_by_viewid(view['guid'])
     for vpr in viewjson['viewPostRefs']:
         print vpr['location']
 </code></pre>
+See <a href="/kf5py-demo">kf5py-demo</a> for examples.
       </section>
     </div>
     <footer>
