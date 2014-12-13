@@ -12,7 +12,8 @@ class connection:
         if baseUrl[-1:] != '/':
             warnings.warn('Adding / to baseUrl',RuntimeWarning)
             baseUrl = baseUrl + '/'
-        auth = requests.post(baseUrl + 'rest/account/userLogin', data={'userName': username, 'password': password})
+        auth = requests.post(baseUrl + 'rest/account/userLogin', data={'userName': username,
+                                                                       'password': password})
         if auth.status_code == 200:
             self.valid = True;
             self.baseUrl = baseUrl

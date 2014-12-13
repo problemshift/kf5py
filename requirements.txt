@@ -1,0 +1,2 @@
+Python==2.3+
+requests==2.5.0 ##http://docs.python-requests.org/en/latest/user/install/
