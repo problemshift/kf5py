@@ -38,6 +38,10 @@ class connection:
     def get_section_ids(self):
         """ Return the user's section IDs. """
         return self.sectionTitleById.keys()
+    
+    def get_section_titles(self):
+        """Return the user's section titles."""
+        return self.sectionIdByTitle
 
     def get_section_id_by_title(self, sectionTitle):
         """ Return the ID of a section given its title. """
