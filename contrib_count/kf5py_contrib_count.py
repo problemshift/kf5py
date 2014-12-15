@@ -48,25 +48,10 @@ class ContributionCount:
         print(self.post_count.keys())
         index = numpy.arange(len(self.get_post_count().keys()))
         contribution_counts = self.get_post_count().values()
-        bar_width = 0.4
+        bar_width = 0.3
         bar_graph = pyplot.subplot()
         rect = bar_graph.bar(index, contribution_counts, bar_width)
-        
-        # add some text for labels, title and axes ticks
-        bar_graph.set_ylabel('Number of contributions')
-        bar_graph.set_title('Contributions by author')
-        bar_graph.set_xticks(index+bar_width)
-        bar_graph.set_xticklabels(self.get_post_count().keys())
-             
-             
-        def autolabel(rects):
-            # attach some text labels
-            for rect in rects:
-                height = rect.get_height()
-                bar_graph.text(rect.get_x()+rect.get_width()/2., 1.3*height, '%d'%int(height),
-                        ha='center', va='bottom')
-        
-        autolabel(rect)
+
         pyplot.show()
         #print(contribution_counts)
         ##return self.num_data_points

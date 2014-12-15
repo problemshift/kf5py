@@ -54,3 +54,5 @@ docs/_build/
 
 #nando
 nando_*
+contrib_count/*.pyc
+contrib_count/contrib_count_run.py
