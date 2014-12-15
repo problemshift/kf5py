@@ -4,7 +4,7 @@ import warnings
 import requests
 
 
-class connection:
+class Connection:
     """Handle connections to the KF5 API."""
 
     def __init__(self, baseUrl, username, password):
