@@ -29,6 +29,9 @@ class Connection:
             self.postsBySectionId = {}
             self.viewsBySectionId = {}
             self.postsByViewId = {}
+            self.buildonsBySectionId = {}
+            self.buildonsByViewId = {}
+            self.buildonsByViewId = {}
             # self.postsByPostId = {}
 
     def is_valid(self):
@@ -80,6 +83,49 @@ class Connection:
                 cookies=self.cookies)
             self.postsByViewId[viewId] = json.loads(posts.text)
         return self.postsByViewId[viewId]
+
+    def get_buildons_by_sectiontitle(self, sectionTitle):
+        """ Return the buildons in a section given the section's title. """
+        return self.get_buildons_by_sectionid(self.get_section_id_by_title(sectionTitle))   
+    def get_buildons_by_sectionid(self, sectionId):
+        """ 
+        Return list of build-on links for an entire section
+            [
+                {
+                    "type":"buildson",
+                    "from":"f07ca24b-850a-420f-bfe9-bdb865b030b5",
+                    "to":"ac10b2ab-b25c-4ede-8c72-3238b7322672"
+                },
+                    {"type":"buildson",
+                    "from":"20f72522-4d62-4d89-907c-c32b447a54dc",
+                    "to":"add053d2-296a-40c9-b2e5-b53ed4b31e3d"
+                }
+            ]
+
+        """
+        if sectionId not in self.buildonsBySectionId:
+            posts = requests.get(
+                self.baseUrl + 'rest/mobile/getBuildsOnInCommunity/%s' % sectionId,
+                cookies=self.cookies)
+            self.buildonsBySectionId[sectionId] = json.loads(posts.text)
+        return self.buildonsBySectionId[sectionId]
+
+    def get_buildons_by_viewid(self, viewId):
+        if viewId not in self.buildonsByViewId:
+            posts = requests.get(
+                self.baseUrl + 'rest/mobile/getBuildsOnInView/%s' % viewId,
+                cookies=self.cookies)
+            self.buildonsByViewId[viewId] = json.loads(posts.text)
+        return self.buildonsByViewId[viewId]
+
+    def get_buildons_by_postid(self, postId):
+        if viewId not in self.buildonsByPostId:
+            posts = requests.get(
+                self.baseUrl + 'rest/mobile/getBuildsOnInPost/%s' % postId,
+                cookies=self.cookies)
+            self.buildonsByPostId[postId] = json.loads(posts.text)
+        return self.buildonsByPostId[postId]
+
 
     #def get_post_by_postid(self,postId):
     #    if postId not in self.postsByPostId:
