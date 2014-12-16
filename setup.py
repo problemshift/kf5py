@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='kf5py',
     py_modules = ['kf5py'],
-    version='0.1.1',
+    version='0.1.2',
     author='Chris Teplovs',
     author_email='dr.chris@problemshift.com',
     url='http://problemshift.github.io/kf5py/',
