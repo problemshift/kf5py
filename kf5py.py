@@ -5,7 +5,9 @@ import requests
 
 
 class Connection:
-    """Handle connections to the KF5 API."""
+    """
+    Handle connections to the KF5 API.
+    """
 
     def __init__(self, baseUrl, username, password):
         self.valid = False
@@ -89,7 +91,8 @@ class Connection:
         return self.get_buildons_by_sectionid(self.get_section_id_by_title(sectionTitle))   
     def get_buildons_by_sectionid(self, sectionId):
         """ 
-        Return list of build-on links for an entire section
+        Return list of build-on links for an entire section, given the ID of the section.  
+        For example:
             [
                 {
                     "type":"buildson",
@@ -111,6 +114,9 @@ class Connection:
         return self.buildonsBySectionId[sectionId]
 
     def get_buildons_by_viewid(self, viewId):
+    """ 
+    Return list of build-on links for an entire section, given the title of the section.
+    """
         if viewId not in self.buildonsByViewId:
             posts = requests.get(
                 self.baseUrl + 'rest/mobile/getBuildsOnInView/%s' % viewId,
@@ -119,7 +125,10 @@ class Connection:
         return self.buildonsByViewId[viewId]
 
     def get_buildons_by_postid(self, postId):
-        if viewId not in self.buildonsByPostId:
+    """ 
+    Return list of build-on links for an entire section, given the ID of the section.
+    """
+            if viewId not in self.buildonsByPostId:
             posts = requests.get(
                 self.baseUrl + 'rest/mobile/getBuildsOnInPost/%s' % postId,
                 cookies=self.cookies)
