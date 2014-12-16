@@ -58,7 +58,7 @@ class Connection:
 
     def get_posts_by_sectiontitle(self, sectionTitle):
         """ Return the posts in a section given the section's title. """
-        return self.get_section_posts_by_id(self.getSectionIdByTitle(sectionTitle))
+        return self.get_posts_by_sectionid(self.getSectionIdByTitle(sectionTitle))
 
     def get_views_by_sectionid(self, sectionId):
         """ Return the posts in a section given the section's ID.  Some memoization is used. """
