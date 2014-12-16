@@ -71,7 +71,7 @@ class Connection:
 
     def get_views_by_sectiontitle(self, sectionTitle):
         """ Return the posts in a section given the section's title. """
-        return self.get_section_views_by_id(self.get_section_id_by_title(sectionTitle))
+        return self.get_section_views_by_sectionid(self.get_section_id_by_title(sectionTitle))
 
     def get_view_by_viewid(self, viewId):
         if viewId not in self.postsByViewId:
