@@ -114,9 +114,7 @@ class Connection:
         return self.buildonsBySectionId[sectionId]
 
     def get_buildons_by_viewid(self, viewId):
-    """ 
-    Return list of build-on links for an entire section, given the title of the section.
-    """
+        """ Return list of build-on links for an entire section, given the title of the section. """
         if viewId not in self.buildonsByViewId:
             posts = requests.get(
                 self.baseUrl + 'rest/mobile/getBuildsOnInView/%s' % viewId,
@@ -125,10 +123,10 @@ class Connection:
         return self.buildonsByViewId[viewId]
 
     def get_buildons_by_postid(self, postId):
-    """ 
-    Return list of build-on links for an entire section, given the ID of the section.
-    """
-            if viewId not in self.buildonsByPostId:
+        """ 
+        Return list of build-on links for an entire section, given the ID of the section.
+        """
+        if viewId not in self.buildonsByPostId:
             posts = requests.get(
                 self.baseUrl + 'rest/mobile/getBuildsOnInPost/%s' % postId,
                 cookies=self.cookies)
@@ -140,7 +138,7 @@ class Connection:
             self.baseUrl + 'rest/mobile/getPostHistory/%s' % postId,
                 cookies=self.cookies)
         return json.loads(history.text)
-        
+
     def get_all_authors(self, sectionId):
         authors = requests.get(
             self.baseUrl + 'rest/mobile/getAllAuthors/%s' % sectionId,
