@@ -135,6 +135,18 @@ class Connection:
             self.buildonsByPostId[postId] = json.loads(posts.text)
         return self.buildonsByPostId[postId]
 
+    def get_post_history(self, postId):
+        history = requests.get(
+            self.baseUrl + 'rest/mobile/getPostHistory/%s' % postId,
+                cookies=self.cookies)
+        return json.loads(history.text)
+        
+    def get_all_authors(self, sectionId):
+        authors = requests.get(
+            self.baseUrl + 'rest/mobile/getAllAuthors/%s' % sectionId,
+                cookies=self.cookies)
+        return json.loads(authors.text)
+
 
     #def get_post_by_postid(self,postId):
     #    if postId not in self.postsByPostId:

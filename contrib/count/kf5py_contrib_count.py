@@ -4,7 +4,7 @@
 #Inspired by the "Contribution" Analytic Tool in KF 4.x by WILLIAM SHAKESPEARE)
 
 from datetime import datetime
-from kf5py import connection
+from kf5py import Connection
 from matplotlib import pyplot
 import numpy
 
@@ -15,7 +15,7 @@ class ContributionCount:
     """
     
     def __init__(self, baseURL, username, password, sectionIds, start_date='', end_date=''):
-        self.kf_connection = connection(baseURL, username, password)
+        self.kf_connection = Connection(baseURL, username, password)
         self.post_count = {}
         try:
             self.start_date = datetime.strptime(start_date, "%Y-%m-%d")
